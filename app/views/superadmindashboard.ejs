@@ -1,0 +1,131 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- CSS -->
+
+    <!-- Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="navbar navbar-expand-lg">
+        <div class="container">
+            <!-- <i class='bx bx-menu mx-4' id="header-toggle"></i> -->
+        </div>
+        <form class="d-flex ms-auto" method="post" action="/search">
+            <input class="form-control" type="search" placeholder="Search" value="" aria-label="Search" name="search" />
+            <button class="btn btn-outline-primary btn-search" type="submit">Search</button>
+        </form>
+        <div class="ms-3">
+            <img src="./images/icon_profil.png" class="rounded-circle" alt=""
+                style="width: 38px; height: 38px; object-fit: cover;">
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static"
+                aria-expanded="false">
+                Unis Badri
+            </button>
+            <ul class="dropdown-menu dropdown-menu-sm-end">
+                <li><button class="dropdown-item" type="button">Action</button></li>
+                <li><button class="dropdown-item" type="button">Another action</button></li>
+                <li><button class="dropdown-item" type="button">Something else here</button></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Sidebar -->
+    <div class="sidebar close">
+        <div class="sidebar-color"></div>
+        <header>
+            <div class="image-text">
+                <span class="image ms-2">
+                    <img src="./images/sidebar_logo.png" alt="" style="width: 34px;">
+                </span>
+                <div class="img-brand">
+                    <img src="./images/binar.png" alt="" style="height: 34px;">
+                </div>
+                <i class='bx bx-menu mx-4 toggle' id="header-toggle"></i>
+            </div>
+        </header>
+
+
+        <div class="menu-bar">
+            <div class="menu">
+                <li class="nav-link mt-2">
+                    <a href="#">
+                        <!-- <i class='bx bx-home-alt'></i> -->
+                        <img src="./images/home.png" alt="">
+                        <span class="fw-bold mx-3">CARS</span>
+                    </a>
+                </li>
+                <li class="nav-link mt-4">
+                    <a href="#">
+                        <!-- <i class='bx bx-home-alt'></i> -->
+                        <img src="./images/administrator.png" alt="">
+                        <span class="fw-bold mx-3">SuperAdmin</span>
+                    </a>
+                </li>
+            </div>
+        </div>
+    </div>
+    <!-- Container Main -->
+    <main class="main close ">
+        <div class="h-100 mx-6">
+            <!-- Breadcrumb -->
+            <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
+                <ol class="breadcrumb pt-3">
+                    <li class="breadcrumb-item">
+                        <a class="fw-bold text-black text-decoration-none">Home</a>
+                    </li>
+                    <li class="breadcrumb-item active">SuperAdmin</li>
+                </ol>
+            </nav>
+            <!-- Title Content -->
+            <div class="pt-2 d-flex justify-content-between">
+                <h4 class="h4 fw-bold">Halaman SuperAdmin</h4>
+
+                <a type="button" class="btn btn-blue fw-bold float-end mx-4" style="font-size: 14px;"
+                    href="/superadmindashboard/tambahadmin">
+                    <i class="bx bx-plus btn-add me-3 align-middle "></i>Add New Admin
+                </a>
+
+            </div>
+            <div class="pt-2 d-flex justify-content-between">
+                <div class="product">
+                    <% data_admin.forEach((ad) => { %>
+                    <div class="cardd satu">
+                        <div class="desc satu">
+                            <h6><%= ad?.username %></h6>
+                            <h6><%= ad?.email %></h6>
+                            <button class="btn btn-danger" id="Delete" data-bs-toggle="modal" data-bs-target="#myModal">
+                                <i class="bi bi-trash"></i>
+                                </a>
+                                <button class="btn btn-success btn-filter-size me-sm-2" onclick="location.href='#'"
+                                    id="Edit">
+                                    <i class="bi bi-pencil-square"></i>
+                                </button>
+                        </div>
+                    </div>
+                    <% }) %>
+                </div>
+
+</body>
+<script src="./js/navbar.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+</html>

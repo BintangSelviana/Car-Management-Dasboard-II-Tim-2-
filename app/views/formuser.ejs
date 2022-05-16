@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login </title>
+    <link rel="stylesheet" href="../../css/stail.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="title-text">
+        <div class="title login">Login</div>
+        <div class="title register">Register</div>
+      </div>
+      <div class="form-container">
+        <div class="slide-controls">
+          <input type="radio" name="slide" id="login" checked>
+          <input type="radio" name="slide" id="register">
+          <label for="login" class="slide login">Login</label>
+          <label for="register" class="slide register">Register</label>
+          <div class="slider-tab"></div>
+        </div>
+        <div class="form-inner">
+          <form method="POST" action="/api/v1/login" class="login">
+            <div class="field">
+              <input type="text" placeholder="Email" name="email" required>
+            </div>
+            <div class="field">
+              <input type="password" placeholder="Password" name="password" required>
+            </div>
+            <div class="pass-link"><a href="#">Lupa password?</a></div>
+            <div class="field btn">
+              <div class="btn-layer"></div>
+              <input type="submit" value="Login">
+            </div>
+            <div class="register-link">Belum Punya Akun? <a href="">Register</a></div>
+          </form>
+          <form method="POST" action="/api/v1/register" class="register">
+            <div class="field">
+              <input type="text" placeholder="Username" name="username" required>
+            </div>
+            <div class="field">
+              <input type="text" placeholder="Email Adress" name="email" required>
+            </div>
+            <div class="field">
+              <input type="password" placeholder="Password" name="password" required>
+            </div>
+            <input type="hidden" name="level" value="customer">
+            <div class="field btn">
+              <div class="btn-layer"></div>
+              <input type="submit" value="Register">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const loginText = document.querySelector(".title-text .login");
+      const loginForm = document.querySelector("form.login");
+      const loginBtn = document.querySelector("label.login");
+      const registerBtn = document.querySelector("label.register");
+      const registerLink = document.querySelector("form .register-link a");
+      registerBtn.onclick = (()=>{
+        loginForm.style.marginLeft = "-50%";
+        loginText.style.marginLeft = "-50%";
+      });
+      loginBtn.onclick = (()=>{
+        loginForm.style.marginLeft = "0%";
+        loginText.style.marginLeft = "0%";
+      });
+      registerLink.onclick = (()=>{
+        registerBtn.click();
+        return false;
+      });
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,242 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="navbar navbar-expand-lg">
+        <div class="container">
+            <!-- <i class='bx bx-menu mx-4' id="header-toggle"></i> -->
+        </div>
+        <form class="d-flex ms-auto" method="post" action="/search">
+            <input class="form-control" type="search" placeholder="Search" value="" aria-label="Search" name="search" />
+            <button class="btn btn-outline-primary btn-search" type="submit">Search</button>
+        </form>
+        <div class="ms-3">
+            <img src="../images/icon_profil.png" class="rounded-circle" alt=""
+                style="width: 38px; height: 38px; object-fit: cover;">
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static"
+                aria-expanded="false">
+                Unis Badri
+            </button>
+            <ul class="dropdown-menu dropdown-menu-sm-end">
+                <li><button class="dropdown-item" type="button">Action</button></li>
+                <li><button class="dropdown-item" type="button">Another action</button></li>
+                <li><button class="dropdown-item" type="button">Something else here</button></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Sidebar -->
+    <div class="sidebar close">
+        <div class="sidebar-color"></div>
+        <header>
+            <div class="image-text">
+                <span class="image ms-2">
+                    <img src="../images/sidebar_logo.png" alt="" style="width: 34px;">
+                </span>
+                <div class="img-brand">
+                    <img src="../images/binar.png" alt="" style="height: 34px;">
+                </div>
+                <i class='bx bx-menu mx-4 toggle' id="header-toggle"></i>
+            </div>
+        </header>
+
+
+        <div class="menu-bar">
+                <div class="menu">
+                <li class="nav-link mt-2">
+                    <a href="#">
+                        <!-- <i class='bx bx-home-alt'></i> -->
+                        <img src="../images/home.png" alt="">
+                        <span class="fw-bold mx-3">CARS</span>
+                    </a>
+                </li>
+                <li class="nav-link mt-4">
+                    <a href="#">
+                        <!-- <i class='bx bx-home-alt'></i> -->
+                        <img src="../images/administrator.png" alt="">
+                        <span class="fw-bold mx-3">SuperAdmin</span>
+                    </a>
+                </li>
+            </div>
+        </div>
+    </div>
+         <!-- Container Main -->
+         <main class="main close ">
+         <div class="h-100 mx-4">
+          <!-- Breadcrumb -->
+          <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
+              <ol class="breadcrumb pt-3">
+                  <li class="breadcrumb-item">
+                      <a class="fw-bold text-black text-decoration-none">Home</a>
+                  </li>
+                  <li class="breadcrumb-item active">Halaman Create Admin</li>
+                  <li class="breadcrumb-item active">Add New Admin</li>
+              </ol>
+          </nav>
+          <!-- Title Content -->
+          <!-- Title Content -->
+      <div class="pt-2 d-flex justify-content-between">
+        <h4 class="h4 fw-bold">Add New Admin</h4>
+      </div>
+      <div class="w-100 bg-light px-5 py-3 rounded-3">
+        <form
+          method="POST"
+          
+          action="/tambahadmin"
+          class="was-validated w-50 px-5 my-auto m-5"
+        >
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input
+              required
+              type="text"
+              class="form-control"
+              name="username"
+              id="username"
+              placeholder="Input Username"
+            />
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input
+              required
+              type="text"
+              class="form-control"
+              name="email"
+              id="email"
+              placeholder="Input Admin Email"
+            />
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input
+              required
+              type="text"
+              class="form-control"
+              id="password"
+              name="password"
+              placeholder="xxx"
+            />
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+          </div>
+          <input type="hidden" name="level" value="admin">
+          <div class="mb-3">
+            <a
+              type="button"
+              class="btn btn-outline-danger"
+              onclick="history.back()"
+              ><i class="bi bi-backspace-fill p-1"></i>Cancel</a
+            >
+
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#myModal"
+              id="save"
+              disabled
+            >
+              <i class="bi bi-upload p-1"></i> Create
+            </button>
+            <div
+              class="modal"
+              id="myModal"
+              data-bs-backdrop="static"
+              data-bs-keyboard="false"
+            >
+              <div class="modal-dialog">
+                <div
+                  class="modal-content"
+                  style="background-color: transparent; border: none"
+                >
+                  <!-- Modal Header -->
+                  <!-- Modal body -->
+
+                  <div
+                    class="d-flex justify-content-center modal-body"
+                    style="border-radius: 1rem"
+                  >
+                    <div
+                      class="card shadow p-3"
+                      style="
+                        display: flex;
+                        border: none;
+                        align-items: center;
+                        border-radius: 1rem;
+                        width: 500px;
+                        height: 500px;
+                      "
+                    >
+                      <h2 class="modal-title my-4">Admin Successfully Created</h2>
+                      <img
+                        src="../images/"
+                        style="width: 250px; height: auto"
+                      />
+                      <div class="d-block">
+                        <button
+                          type="submit"
+                          class="btn btn-lg btn-success my-4"
+                          value="Create Admin"
+                        >
+                          Confirm
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+      <script src="../js/navbar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+        <script>
+          const submitBtn = document.getElementById("save");
+    
+          const uName = document.getElementById("username");
+          const uPassword = document.getElementById("password");
+          const uEmail = document.getElementById("email");
+    
+          // run this function whenever the values of any of the above 4 inputs change.
+          // this is to check if the input for all 4 is valid.  if so, enable submitBtn.
+          // otherwise, disable it.
+          const checkEnableButton = () => {
+            submitBtn.disabled = !(uName.value && uPassword.value && uEmail.value);
+          };
+    
+          uName.addEventListener("change", checkEnableButton);
+          uPassword.addEventListener("change", checkEnableButton);
+          uEmail.addEventListener("change", checkEnableButton);
+        </script>
+  </main>
+        </body>
+</html>

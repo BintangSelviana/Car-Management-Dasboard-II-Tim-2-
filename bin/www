@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+
+/**
+ * @file Run express.js
+ * @author Fikri Rahmat Nurhidayat
+ */
+
+const app = require("../app/server")
+const port = process.env.PORT || 8269;
+
+app.listen(port, () => {
+  console.log(`Server Jalan di http://localhost:${port}`)
+})
